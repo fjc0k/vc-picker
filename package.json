@@ -1,0 +1,52 @@
+{
+  "name": "laa",
+  "version": "0.1.0",
+  "description": "拉啊：一款小巧精致的移动端触摸滑动插件。",
+  "main": "dist/laa.cjs.js",
+  "module": "dist/laa.es.js",
+  "unpkg": "dist/laa.min.js",
+  "jsdelivr": "dist/laa.min.js",
+  "homepage": "https://github.com/fjc0k/laa",
+  "license": "MIT",
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:fjc0k/laa.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fjc0k/laa/issues"
+  },
+  "keywords": [
+    "scroll",
+    "touch",
+    "slide",
+    "carousel"
+  ],
+  "files": [
+    "dist"
+  ],
+  "author": {
+    "name": "Jay Fong",
+    "email": "fjc0kb@gmail.com",
+    "url": "https://github.com/fjc0k"
+  },
+  "scripts": {
+    "dev": "bdr dev test/index.ts",
+    "build": "tsc --emitDeclarationOnly & bdr build",
+    "release": "standard-version -a",
+    "postrelease": "git push --follow-tags origin master && npm publish"
+  },
+  "standard-version": {
+    "scripts": {
+      "postbump": "yarn build && git add -A"
+    }
+  },
+  "devDependencies": {
+    "@poi/plugin-typescript": "^10.2.0",
+    "bdr": "^1.5.2",
+    "standard-version": "^4.4.0",
+    "tslint": "^5.11.0",
+    "typescript": "^3.0.3",
+    "vue": "^2.5.17"
+  }
+}
