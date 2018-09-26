@@ -1,6 +1,6 @@
 module.exports = {
   entry: {
-    laa: ['src/index.ts', 'Laa']
+    'picker': ['src/index.ts', 'VPicker']
   },
   format: 'es,cjs,umd,umd-min',
   typescript: require('typescript'),
