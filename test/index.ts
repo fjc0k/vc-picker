@@ -19,11 +19,14 @@ new Vue({ // tslint:disable-line
       'v-picker-view',
       {
         staticClass: 'item', attrs: {
-          data: [[
-            { label: '方剑成', value: '124' },
+          data: [
+            { label: '方剑成', value: '124', children: [
+              { label: 1, value: 2 }
+            ] },
             { label: '方剑成2', value: '1242' }
-          ]],
-          value: []
+          ],
+          value: [],
+          cascaded: true
         }
       },
       [

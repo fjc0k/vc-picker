@@ -1,4 +1,4 @@
-import { CascadedPickerData, PickerData, RawPickerData } from './interfaces'
+import { PickerData, RawPickerData } from './interfaces'
 
 export const inBrowser: boolean = typeof window !== 'undefined'
 
@@ -24,15 +24,5 @@ export function unbindEvent(
 }
 
 export function normalizeData(data: RawPickerData, cascaded: boolean): PickerData {
-  if (!cascaded) return (data as PickerData)
-  return ([(data as CascadedPickerData).map(item => {
-    if (item) {
-      if (Array.isArray(item.children)) {
-        item.children = normalizeData(item.children, cascaded)
-      } else {
-        delete item.children
-      }
-    }
-    return item
-  })] as PickerData)
+  return (cascaded ? [data] : data.slice()) as PickerData
 }
